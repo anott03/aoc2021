@@ -1,0 +1,23 @@
+use std::fs::File;
+use std::io::{self, prelude::*, BufReader};
+
+fn main() -> io::Result<()> {
+    let file = File::open("./src/input")?;
+    let reader = BufReader::new(file);
+    let lines: Vec<String> = reader.lines()
+        .filter(|item| item.is_ok())
+        .map(|item| item.unwrap())
+        .collect();
+
+    let x = 0;
+    for i in 0..lines.len() {
+        let ch = lines[i].chars().next().unwrap().to_digit(10).unwrap();
+        println!("{:?}", ch);
+        match(ch) {
+            Some(c) => println!("{:?}", c),
+            None => {}
+        }
+    }
+
+    Ok(())
+}

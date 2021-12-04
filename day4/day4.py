@@ -1,4 +1,4 @@
-infile = "./sample_input"
+infile = "./input"
 
 lines = []
 for line in open(infile):
@@ -20,12 +20,12 @@ win = False
 win_board = None
 win_draw = None
 while len(draws) > 0 and not win:
-    for draw in draws[0:5]:
-        for i in range(len(boards)):
-            for j in range(len(boards[i])):
-                if draw in boards[i][j]:
-                    k = boards[i][j].index(draw)
-                    boards[i][j][k] = -1
+    draw = draws[0]
+    for i in range(len(boards)):
+        for j in range(len(boards[i])):
+            if draw in boards[i][j]:
+                k = boards[i][j].index(draw)
+                boards[i][j][k] = -1
 
     for board in boards:
         for i in range(len(board)):
@@ -43,7 +43,7 @@ while len(draws) > 0 and not win:
                 win_draw = draw
                 win = True
 
-    del draws[0:5]
+    del draws[0]
 
 s = 0
 for i in range(5):

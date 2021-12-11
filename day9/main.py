@@ -43,4 +43,5 @@ def part1(lines):
 def part2(lines):
     pass
 
+
 print(part2(lines))

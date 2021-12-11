@@ -6,13 +6,13 @@ for line in open(infile):
 nums.sort()
 
 min_cost = float('inf')
-for x in nums:
+for x in range(max(nums)):
     cost = 0
     for y in nums:
-        cost += sum(range(abs(y - x)))
+        if y != x:
+            n = abs(y-x)
+            cost += (n * (n + 1))//2
     if cost < min_cost:
         min_cost = cost
 
 print(min_cost)
-
-# 97038219

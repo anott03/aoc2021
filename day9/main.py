@@ -23,7 +23,7 @@ def part1(lines):
             else:
                 if line[j] < line[j + 1] and line[j] < line[j - 1]:
                     candidates.append((i, j))
-    
+
     for candidate in candidates:
         i = candidate[0]
         j = candidate[1]
@@ -40,4 +40,7 @@ def part1(lines):
     return s
 
 
-print(part1(lines))
+def part2(lines):
+    pass
+
+print(part2(lines))

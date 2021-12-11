@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 infile = './input'
 count = 0
 for line in open(infile):

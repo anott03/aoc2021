@@ -5,11 +5,14 @@ for line in open(infile):
 
 nums.sort()
 
-a = nums[len(nums)//2]
-print(a)
-
-cost = 0
+min_cost = float('inf')
 for x in nums:
-    cost += abs(a - x)
+    cost = 0
+    for y in nums:
+        cost += sum(range(abs(y - x)))
+    if cost < min_cost:
+        min_cost = cost
 
-print(cost)
+print(min_cost)
+
+# 97038219

@@ -1,0 +1,9 @@
+#!/bin/sh
+day=$1
+mkdir "day$day"
+echo "#!/usr/bin/python3\nimport sys\n" >> "day$day/$day.py"
+echo "infile = sys.argv[1] if len(sys.argv) > 1 else \"$day.in\"\n" >> "day$day/$day.py"
+echo "X = []\na = 0" >> "day$day/$day.py"
+echo "for line in open(infile):\n    X.append(line)" >> "day$day/$day.py"
+touch "day$day/$day.in"
+chmod +x "day$day/$day.py"
